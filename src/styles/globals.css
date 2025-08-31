@@ -1,0 +1,2962 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --background: #f8faf7;
+  --foreground: #1a2e1a;
+  --card: #ffffff;
+  --card-foreground: #1a2e1a;
+  --popover: #ffffff;
+  --popover-foreground: #1a2e1a;
+  --primary: #228B22;
+  --primary-foreground: #ffffff;
+  --secondary: #32CD32;
+  --secondary-foreground: #1a2e1a;
+  --muted: #e8f3e8;
+  --muted-foreground: #5a6b5a;
+  --accent: #90EE90;
+  --accent-foreground: #1a2e1a;
+  --destructive: #228B22;
+  --destructive-foreground: #ffffff;
+  --border: rgba(34, 139, 34, 0.2);
+  --input: transparent;
+  --input-background: #f0f5f0;
+  --switch-background: #c4d4c4;
+  --font-weight-medium: 600;
+  --font-weight-normal: 400;
+  --ring: #228B22;
+  --chart-1: #228B22;
+  --chart-2: #32CD32;
+  --chart-3: #90EE90;
+  --chart-4: #4a7c59;
+  --chart-5: #87a96b;
+  --radius: 0.5rem;
+  --sidebar: #f8faf7;
+  --sidebar-foreground: #1a2e1a;
+  --sidebar-primary: #228B22;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e8f3e8;
+  --sidebar-accent-foreground: #1a2e1a;
+  --sidebar-border: rgba(34, 139, 34, 0.2);
+  --sidebar-ring: #228B22;
+  
+  /* Sage-specific colors - Enhanced green palette */
+  --sage-dark: #2d5016;
+  --sage-medium: #4a7c59;
+  --sage-light: #87a96b;
+  --sage-pale: #c4d4c4;
+  --sage-bright: #32CD32;
+  --sage-lime: #90EE90;
+  --sage-emerald: #00C957;
+  --sage-forest: #228B22;
+  --sage-mint: #98FB98;
+  --sage-spring: #00FF7F;
+  --cream: #faf8f5;
+  --earth: #8b7355;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    h4 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    p {
+      font-size: 1.25rem;
+      font-weight: var(--font-weight-normal);
+      line-height: 1.6;
+    }
+
+    label {
+      font-size: 1rem;
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: 1.125rem;
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: 1rem;
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for fixed headers if any */
+}
+
+/* Enhanced RTL Support */
+[dir="rtl"] {
+  direction: rtl;
+}
+
+.rtl-layout {
+  direction: rtl;
+}
+
+.ltr-layout {
+  direction: ltr;
+}
+
+/* RTL Text Alignment */
+[dir="rtl"] .rtl\:text-right {
+  text-align: right;
+}
+
+[dir="rtl"] .rtl\:text-left {
+  text-align: left;
+}
+
+[dir="rtl"] .text-right {
+  text-align: right;
+}
+
+[dir="rtl"] .text-left {
+  text-align: left;
+}
+
+[dir="rtl"] .text-center {
+  text-align: center;
+}
+
+/* RTL Margin Adjustments */
+[dir="rtl"] .rtl\:mr-auto {
+  margin-right: auto;
+}
+
+[dir="rtl"] .rtl\:ml-auto {
+  margin-left: auto;
+}
+
+[dir="rtl"] .ml-2 {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+[dir="rtl"] .ml-3 {
+  margin-left: 0;
+  margin-right: 0.75rem;
+}
+
+[dir="rtl"] .ml-4 {
+  margin-left: 0;
+  margin-right: 1rem;
+}
+
+[dir="rtl"] .mr-2 {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+[dir="rtl"] .mr-3 {
+  margin-right: 0;
+  margin-left: 0.75rem;
+}
+
+[dir="rtl"] .mr-4 {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+/* RTL Flex Direction */
+[dir="rtl"] .rtl\:flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .flex {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .flex-col {
+  flex-direction: column;
+}
+
+[dir="rtl"] .rtl\:space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+/* RTL Grid Support */
+[dir="rtl"] .grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .lg\:grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  direction: rtl;
+}
+
+/* RTL Order Classes */
+[dir="rtl"] .lg\:order-1 {
+  order: 1;
+}
+
+[dir="rtl"] .lg\:order-2 {
+  order: 2;
+}
+
+/* RTL Positioning */
+[dir="rtl"] .left-6 {
+  left: auto;
+  right: 1.5rem;
+}
+
+[dir="rtl"] .right-6 {
+  right: auto;
+  left: 1.5rem;
+}
+
+[dir="rtl"] .left-0 {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .right-0 {
+  right: auto;
+  left: 0;
+}
+
+/* RTL Dropdown Support */
+[dir="rtl"] .absolute {
+  direction: rtl;
+}
+
+[dir="rtl"] .relative {
+  direction: rtl;
+}
+
+/* RTL Button Icon Spacing */
+[dir="rtl"] .space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+[dir="rtl"] .space-x-3 > :not([hidden]) ~ :not([hidden]) {
+  margin-left: 0;
+  margin-right: 0.75rem;
+}
+
+[dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  margin-left: 0;
+  margin-right: 1rem;
+}
+
+/* RTL Transform Origins */
+[dir="rtl"] .origin-left {
+  transform-origin: right;
+}
+
+[dir="rtl"] .origin-right {
+  transform-origin: left;
+}
+
+/* RTL Justify Content */
+[dir="rtl"] .justify-start {
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .justify-end {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .justify-between {
+  justify-content: space-between;
+}
+
+/* RTL Items Alignment */
+[dir="rtl"] .items-start {
+  align-items: flex-end;
+}
+
+[dir="rtl"] .items-end {
+  align-items: flex-start;
+}
+
+/* RTL Border Radius */
+[dir="rtl"] .rounded-l-full {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+}
+
+[dir="rtl"] .rounded-r-full {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 9999px;
+  border-bottom-left-radius: 9999px;
+}
+
+/* Enhanced RTL Language-Specific Adjustments */
+html[lang="he"] {
+  text-align: right;
+}
+
+html[lang="ar"] {
+  text-align: right;
+}
+
+html[lang="he"] .text-center {
+  text-align: center !important;
+}
+
+html[lang="ar"] .text-center {
+  text-align: center !important;
+}
+
+/* Better RTL Typography Spacing */
+html[lang="he"] p,
+html[lang="he"] span,
+html[lang="he"] div,
+html[lang="ar"] p,
+html[lang="ar"] span,
+html[lang="ar"] div {
+  word-spacing: 0.05em;
+  letter-spacing: 0.01em;
+}
+
+/* RTL Grid Template Areas */
+[dir="rtl"] .lg\:grid-flow-col-dense {
+  grid-auto-flow: column dense;
+  direction: rtl;
+}
+
+/* RTL Animation and Transform Support */
+[dir="rtl"] .transform {
+  direction: ltr; /* Keep transforms in LTR for consistency */
+}
+
+/* RTL Dropdown Positioning */
+[dir="rtl"] .dropdown-menu {
+  left: 0;
+  right: auto;
+}
+
+/* Better RTL Button Group Support */
+[dir="rtl"] .btn-group {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .btn-group > * {
+  margin-left: 0;
+  margin-right: 0.25rem;
+}
+
+/* RTL Language Switcher Specific */
+[dir="rtl"] .language-switcher-container {
+  direction: ltr; /* Keep language switcher in LTR for flag consistency */
+}
+
+/* RTL Overflow and Scroll */
+[dir="rtl"] .overflow-x-auto {
+  direction: rtl;
+}
+
+[dir="rtl"] .scroll-container {
+  direction: rtl;
+}
+
+/* Hebrew and Arabic font support */
+[dir="rtl"] {
+  font-family: "Segoe UI", "Tahoma", "Arial", sans-serif;
+}
+
+/* Arabic font support */
+html[lang="ar"] {
+  font-family: "Amiri", "Scheherazade New", "Noto Sans Arabic", "Traditional Arabic", "Segoe UI", "Tahoma", "Arial", sans-serif;
+}
+
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4 {
+  font-family: "Amiri", "Scheherazade New", "Noto Sans Arabic", "Traditional Arabic", "Segoe UI", sans-serif;
+}
+
+/* Russian (Cyrillic) font support */
+html[lang="ru"] {
+  font-family: "Roboto", "Open Sans", "PT Sans", "DejaVu Sans", "Liberation Sans", "Segoe UI", "Tahoma", "Arial", sans-serif;
+}
+
+html[lang="ru"] h1,
+html[lang="ru"] h2,
+html[lang="ru"] h3,
+html[lang="ru"] h4 {
+  font-family: "Roboto", "PT Sans", "Open Sans", "DejaVu Sans", "Segoe UI", sans-serif;
+  font-weight: 700;
+}
+
+/* Ukrainian (Cyrillic) font support */
+html[lang="uk"] {
+  font-family: "Roboto", "Open Sans", "PT Sans", "Ubuntu", "DejaVu Sans", "Liberation Sans", "Segoe UI", "Tahoma", "Arial", sans-serif;
+}
+
+html[lang="uk"] h1,
+html[lang="uk"] h2,
+html[lang="uk"] h3,
+html[lang="uk"] h4 {
+  font-family: "Roboto", "PT Sans", "Ubuntu", "Open Sans", "DejaVu Sans", "Segoe UI", sans-serif;
+  font-weight: 700;
+}
+
+/* Georgian font support */
+html[lang="ka"] {
+  font-family: "BPG Arial", "Sylfaen", "Segoe UI", "Arial Unicode MS", "Lucida Sans Unicode", sans-serif;
+}
+
+html[lang="ka"] h1,
+html[lang="ka"] h2,
+html[lang="ka"] h3,
+html[lang="ka"] h4 {
+  font-family: "BPG Arial", "Sylfaen", "Segoe UI", "Arial Unicode MS", sans-serif;
+  font-weight: 700;
+}
+
+/* Filipino Tagalog font support */
+html[lang="tl"] {
+  font-family: "Inter", "Roboto", "Open Sans", "Segoe UI", "Tahoma", "Arial", sans-serif;
+}
+
+html[lang="tl"] h1,
+html[lang="tl"] h2,
+html[lang="tl"] h3,
+html[lang="tl"] h4 {
+  font-family: "Inter", "Roboto", "Open Sans", "Segoe UI", sans-serif;
+  font-weight: 700;
+}
+
+/* French font support */
+html[lang="fr"] {
+  font-family: "Inter", "Roboto", "Open Sans", "Segoe UI", "Tahoma", "Arial", sans-serif;
+}
+
+html[lang="fr"] h1,
+html[lang="fr"] h2,
+html[lang="fr"] h3,
+html[lang="fr"] h4 {
+  font-family: "Inter", "Roboto", "Open Sans", "Segoe UI", sans-serif;
+  font-weight: 700;
+}
+
+/* Spanish font support */
+html[lang="es"] {
+  font-family: "Inter", "Roboto", "Open Sans", "Segoe UI", "Tahoma", "Arial", sans-serif;
+}
+
+html[lang="es"] h1,
+html[lang="es"] h2,
+html[lang="es"] h3,
+html[lang="es"] h4 {
+  font-family: "Inter", "Roboto", "Open Sans", "Segoe UI", sans-serif;
+  font-weight: 700;
+}
+
+/* Portuguese font support */
+html[lang="pt"] {
+  font-family: "Inter", "Roboto", "Open Sans", "Segoe UI", "Tahoma", "Arial", sans-serif;
+}
+
+html[lang="pt"] h1,
+html[lang="pt"] h2,
+html[lang="pt"] h3,
+html[lang="pt"] h4 {
+  font-family: "Inter", "Roboto", "Open Sans", "Segoe UI", sans-serif;
+  font-weight: 700;
+}
+
+/* German font support */
+html[lang="de"] {
+  font-family: "Inter", "Roboto", "Open Sans", "Segoe UI", "Tahoma", "Arial", sans-serif;
+}
+
+html[lang="de"] h1,
+html[lang="de"] h2,
+html[lang="de"] h3,
+html[lang="de"] h4 {
+  font-family: "Inter", "Roboto", "Open Sans", "Segoe UI", sans-serif;
+  font-weight: 700;
+}
+
+/* Dutch font support */
+html[lang="nl"] {
+  font-family: "Inter", "Roboto", "Open Sans", "Segoe UI", "Tahoma", "Arial", sans-serif;
+}
+
+html[lang="nl"] h1,
+html[lang="nl"] h2,
+html[lang="nl"] h3,
+html[lang="nl"] h4 {
+  font-family: "Inter", "Roboto", "Open Sans", "Segoe UI", sans-serif;
+  font-weight: 700;
+}
+
+/* Romanian font support */
+html[lang="ro"] {
+  font-family: "Inter", "Roboto", "Open Sans", "Segoe UI", "Tahoma", "Arial", sans-serif;
+}
+
+html[lang="ro"] h1,
+html[lang="ro"] h2,
+html[lang="ro"] h3,
+html[lang="ro"] h4 {
+  font-family: "Inter", "Roboto", "Open Sans", "Segoe UI", sans-serif;
+  font-weight: 700;
+}
+
+/* Amharic and Tigrinya (Ge'ez script) font support */
+html[lang="am"],
+html[lang="ti"] {
+  font-family: "Nyala", "Abyssinica SIL", "Ethiopia Jiret", "Segoe UI", "Arial Unicode MS", "Lucida Sans Unicode", sans-serif;
+}
+
+html[lang="am"] h1,
+html[lang="am"] h2,
+html[lang="am"] h3,
+html[lang="am"] h4,
+html[lang="ti"] h1,
+html[lang="ti"] h2,
+html[lang="ti"] h3,
+html[lang="ti"] h4 {
+  font-family: "Nyala", "Abyssinica SIL", "Ethiopia Jiret", "Segoe UI", "Arial Unicode MS", sans-serif;
+}
+
+/* Improve line-height for Amharic, Tigrinya, and Arabic text */
+html[lang="am"] p,
+html[lang="am"] span,
+html[lang="am"] div,
+html[lang="ti"] p,
+html[lang="ti"] span,
+html[lang="ti"] div,
+html[lang="ar"] p,
+html[lang="ar"] span,
+html[lang="ar"] div {
+  line-height: 1.7;
+}
+
+/* Better spacing for multi-language buttons */
+.language-switcher-responsive {
+  @media (max-width: 640px) {
+    gap: 0.25rem;
+  }
+}
+
+/* Multi-language button improvements - Updated for 15 languages */
+.language-button-grid {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  gap: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .language-button-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.125rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .language-button-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-button-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.125rem;
+  }
+}
+
+/* Ge'ez script specific improvements */
+html[lang="am"],
+html[lang="ti"] {
+  word-spacing: 0.1em;
+}
+
+/* Language switcher positioning improvements */
+.language-switcher-container {
+  max-width: fit-content;
+}
+
+@media (max-width: 480px) {
+  .language-switcher-container {
+    transform: scale(0.75);
+    transform-origin: top right;
+    max-width: 320px;
+  }
+  
+  [dir="rtl"] .language-switcher-container {
+    transform-origin: top left;
+  }
+}
+
+/* Seven language grid for mobile */
+@media (max-width: 380px) {
+  .language-switcher-container {
+    transform: scale(0.7);
+    max-width: 220px;
+  }
+  
+  .language-switcher-container .flex {
+    grid-template-columns: repeat(7, 1fr);
+    display: grid;
+    gap: 0.125rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .language-switcher-container {
+    transform: scale(0.65);
+    max-width: 200px;
+  }
+  
+  .language-switcher-container .flex {
+    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    gap: 0.125rem;
+  }
+}
+
+/* Font classes for different scripts */
+.font-geez {
+  font-family: "Nyala", "Abyssinica SIL", "Ethiopia Jiret", "Segoe UI", "Arial Unicode MS", sans-serif;
+}
+
+.font-arabic {
+  font-family: "Amiri", "Scheherazade New", "Noto Sans Arabic", "Traditional Arabic", "Segoe UI", sans-serif;
+}
+
+.font-cyrillic {
+  font-family: "Roboto", "PT Sans", "Open Sans", "DejaVu Sans", "Segoe UI", sans-serif;
+}
+
+.font-ukrainian {
+  font-family: "Roboto", "PT Sans", "Ubuntu", "Open Sans", "DejaVu Sans", "Segoe UI", sans-serif;
+}
+
+.font-georgian {
+  font-family: "BPG Arial", "Sylfaen", "Segoe UI", "Arial Unicode MS", "Lucida Sans Unicode", sans-serif;
+}
+
+.font-latin {
+  font-family: "Inter", "Roboto", "Open Sans", "Segoe UI", "Tahoma", "Arial", sans-serif;
+}
+
+/* Improve Arabic numerals */
+html[lang="ar"] .price,
+html[lang="ar"] .currency {
+  font-variant-numeric: lining-nums;
+  direction: ltr;
+  display: inline-block;
+}
+
+/* Better Arabic punctuation */
+html[lang="ar"] {
+  text-align: right;
+}
+
+html[lang="ar"] blockquote {
+  border-right: 4px solid var(--primary);
+  border-left: none;
+  padding-right: 1rem;
+  padding-left: 0;
+}
+
+/* Improve button text for different languages */
+html[lang="am"] button,
+html[lang="ti"] button,
+html[lang="he"] button,
+html[lang="ar"] button,
+html[lang="ru"] button,
+html[lang="uk"] button,
+html[lang="ka"] button,
+html[lang="tl"] button,
+html[lang="fr"] button,
+html[lang="es"] button,
+html[lang="pt"] button,
+html[lang="de"] button,
+html[lang="nl"] button,
+html[lang="ro"] button {
+  font-weight: 600;
+}
+
+/* Ensure proper text rendering for all scripts */
+html[lang="am"] *,
+html[lang="ti"] *,
+html[lang="he"] *,
+html[lang="ar"] *,
+html[lang="ru"] *,
+html[lang="uk"] *,
+html[lang="ka"] *,
+html[lang="tl"] *,
+html[lang="fr"] *,
+html[lang="es"] *,
+html[lang="pt"] *,
+html[lang="de"] *,
+html[lang="nl"] *,
+html[lang="ro"] *,
+html[lang="en"] * {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Arabic specific text improvements */
+html[lang="ar"] {
+  word-spacing: 0.05em;
+  letter-spacing: 0.01em;
+}
+
+/* Arabic calligraphy enhancement */
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3 {
+  font-feature-settings: "liga" 1, "calt" 1, "kern" 1;
+  font-variant-ligatures: common-ligatures contextual;
+}
+
+/* Russian (Cyrillic) text improvements */
+html[lang="ru"] {
+  word-spacing: 0.02em;
+  letter-spacing: 0.005em;
+}
+
+/* Russian typography enhancement */
+html[lang="ru"] h1,
+html[lang="ru"] h2,
+html[lang="ru"] h3 {
+  font-feature-settings: "kern" 1;
+  font-variant-ligatures: common-ligatures;
+}
+
+/* Ukrainian (Cyrillic) text improvements */
+html[lang="uk"] {
+  word-spacing: 0.02em;
+  letter-spacing: 0.005em;
+}
+
+/* Ukrainian typography enhancement */
+html[lang="uk"] h1,
+html[lang="uk"] h2,
+html[lang="uk"] h3 {
+  font-feature-settings: "kern" 1;
+  font-variant-ligatures: common-ligatures;
+}
+
+/* Better line height for Cyrillic */
+html[lang="ru"] p,
+html[lang="ru"] span,
+html[lang="ru"] div,
+html[lang="uk"] p,
+html[lang="uk"] span,
+html[lang="uk"] div {
+  line-height: 1.6;
+}
+
+/* Optimize Cyrillic character spacing */
+html[lang="ru"] .currency,
+html[lang="ru"] .price,
+html[lang="uk"] .currency,
+html[lang="uk"] .price {
+  font-variant-numeric: lining-nums;
+}
+
+/* Georgian text improvements */
+html[lang="ka"] {
+  word-spacing: 0.03em;
+  letter-spacing: 0.008em;
+}
+
+html[lang="ka"] h1,
+html[lang="ka"] h2,
+html[lang="ka"] h3 {
+  font-feature-settings: "kern" 1;
+  font-variant-ligatures: common-ligatures;
+}
+
+html[lang="ka"] p,
+html[lang="ka"] span,
+html[lang="ka"] div {
+  line-height: 1.65;
+}
+
+/* Latin script language improvements */
+html[lang="tl"] p,
+html[lang="tl"] span,
+html[lang="tl"] div,
+html[lang="fr"] p,
+html[lang="fr"] span,
+html[lang="fr"] div,
+html[lang="es"] p,
+html[lang="es"] span,
+html[lang="es"] div,
+html[lang="pt"] p,
+html[lang="pt"] span,
+html[lang="pt"] div,
+html[lang="de"] p,
+html[lang="de"] span,
+html[lang="de"] div,
+html[lang="nl"] p,
+html[lang="nl"] span,
+html[lang="nl"] div,
+html[lang="ro"] p,
+html[lang="ro"] span,
+html[lang="ro"] div {
+  line-height: 1.6;
+}
+
+/* Improve typography for Latin script languages */
+html[lang="tl"] h1,
+html[lang="tl"] h2,
+html[lang="tl"] h3,
+html[lang="fr"] h1,
+html[lang="fr"] h2,
+html[lang="fr"] h3,
+html[lang="es"] h1,
+html[lang="es"] h2,
+html[lang="es"] h3,
+html[lang="pt"] h1,
+html[lang="pt"] h2,
+html[lang="pt"] h3,
+html[lang="de"] h1,
+html[lang="de"] h2,
+html[lang="de"] h3,
+html[lang="nl"] h1,
+html[lang="nl"] h2,
+html[lang="nl"] h3,
+html[lang="ro"] h1,
+html[lang="ro"] h2,
+html[lang="ro"] h3 {
+  font-feature-settings: "kern" 1, "liga" 1;
+  font-variant-ligatures: common-ligatures;
+}
+
+/* Fifteen-language responsive layout improvements */
+@media (max-width: 600px) {
+  .language-switcher-container {
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .language-switcher-container .flex {
+    flex-wrap: wrap;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 350px) {
+  .language-switcher-container {
+    transform: scale(0.6);
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 280px) {
+  .language-switcher-container {
+    transform: scale(0.55);
+    max-width: 240px;
+  }
+  
+  .language-switcher-container .flex {
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    gap: 0.125rem;
+  }
+}
+
+/* RTL specific adjustments for animations */
+[dir="rtl"] .rtl\:rotate-reverse {
+  transform: scaleX(-1);
+}
+
+/* RTL margin adjustments */
+[dir="rtl"] .ml-3 {
+  margin-left: 0;
+  margin-right: 0.75rem;
+}
+
+[dir="rtl"] .mr-4 {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+[dir="rtl"] .ml-4 {
+  margin-left: 0;
+  margin-right: 1rem;
+}
+
+/* RTL border radius adjustments */
+[dir="rtl"] .rounded-l-full {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+}
+
+[dir="rtl"] .rounded-r-full {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 9999px;
+  border-bottom-left-radius: 9999px;
+}
+
+/* Artistic title letter animation enhancements */
+.artistic-letter {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.artistic-letter:hover {
+  transform-origin: center center;
+}
+
+/* Enhanced glow effects for letters */
+@keyframes letterGlow {
+  0% { 
+    text-shadow: 0 0 5px rgba(74, 124, 89, 0.3);
+  }
+  50% { 
+    text-shadow: 
+      0 0 10px rgba(74, 124, 89, 0.6),
+      0 0 20px rgba(74, 124, 89, 0.4),
+      0 0 30px rgba(74, 124, 89, 0.2);
+  }
+  100% { 
+    text-shadow: 0 0 5px rgba(74, 124, 89, 0.3);
+  }
+}
+
+.letter-glow {
+  animation: letterGlow 3s ease-in-out infinite;
+}
+
+/* Particle effect styles */
+@keyframes sparkleFloat {
+  0% { 
+    transform: translateY(0) rotate(0deg) scale(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(-10px) rotate(90deg) scale(1);
+  }
+  80% {
+    opacity: 0.8;
+    transform: translateY(-20px) rotate(270deg) scale(0.8);
+  }
+  100% { 
+    opacity: 0;
+    transform: translateY(-30px) rotate(360deg) scale(0);
+  }
+}
+
+.sparkle-particle {
+  animation: sparkleFloat 2s ease-out infinite;
+}
+
+/* 3D text enhancement */
+.text-3d {
+  text-shadow: 
+    1px 1px 0 rgba(74, 124, 89, 0.1),
+    2px 2px 0 rgba(74, 124, 89, 0.1),
+    3px 3px 0 rgba(74, 124, 89, 0.1),
+    4px 4px 0 rgba(74, 124, 89, 0.1),
+    5px 5px 10px rgba(74, 124, 89, 0.2);
+}
+
+/* Gradient text animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient-text {
+  background: linear-gradient(-45deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+  background-size: 400% 400%;
+  animation: gradientShift 4s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Magnetic field effect for letter interactions */
+.magnetic-letter {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.magnetic-letter:hover {
+  transform: translateZ(20px) rotateY(10deg) rotateX(5deg);
+  filter: 
+    brightness(1.2) 
+    saturate(1.4) 
+    drop-shadow(0 10px 20px rgba(74, 124, 89, 0.3));
+}
+
+/* Enhanced cinematic letter animations */
+@keyframes cinematicReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.2) rotateX(-180deg) rotateY(-90deg) rotateZ(-45deg) translateY(-200px) translateZ(-100px);
+    filter: blur(20px) brightness(0.3);
+  }
+  25% {
+    opacity: 0.3;
+    transform: scale(0.6) rotateX(-90deg) rotateY(-45deg) rotateZ(-20deg) translateY(-100px) translateZ(-50px);
+    filter: blur(10px) brightness(0.6);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(0.9) rotateX(-30deg) rotateY(-15deg) rotateZ(-5deg) translateY(-20px) translateZ(-10px);
+    filter: blur(5px) brightness(0.9);
+  }
+  75% {
+    opacity: 0.9;
+    transform: scale(1.05) rotateX(-5deg) rotateY(-2deg) rotateZ(0deg) translateY(-5px) translateZ(5px);
+    filter: blur(1px) brightness(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateY(0px) translateZ(0px);
+    filter: blur(0px) brightness(1);
+  }
+}
+
+@keyframes energyWave {
+  0% {
+    transform: translateX(-200%) scaleY(0.5);
+    opacity: 0;
+  }
+  20% {
+    transform: translateX(-100%) scaleY(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(0%) scaleY(1);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(100%) scaleY(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(200%) scaleY(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes particleExplosion {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(1.5) rotate(180deg);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1) rotate(360deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0.5) rotate(540deg);
+    opacity: 0;
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    text-shadow: 
+      0 0 5px rgba(74, 124, 89, 0.3),
+      0 0 10px rgba(74, 124, 89, 0.2);
+  }
+  25% {
+    text-shadow: 
+      0 0 15px rgba(74, 124, 89, 0.6),
+      0 0 30px rgba(74, 124, 89, 0.4),
+      0 0 45px rgba(74, 124, 89, 0.2);
+  }
+  50% {
+    text-shadow: 
+      0 0 25px rgba(74, 124, 89, 0.8),
+      0 0 50px rgba(74, 124, 89, 0.6),
+      0 0 75px rgba(74, 124, 89, 0.4),
+      0 0 100px rgba(74, 124, 89, 0.2);
+  }
+  75% {
+    text-shadow: 
+      0 0 15px rgba(74, 124, 89, 0.6),
+      0 0 30px rgba(74, 124, 89, 0.4),
+      0 0 45px rgba(74, 124, 89, 0.2);
+  }
+  100% {
+    text-shadow: 
+      0 0 5px rgba(74, 124, 89, 0.3),
+      0 0 10px rgba(74, 124, 89, 0.2);
+  }
+}
+
+@keyframes energyField {
+  0% {
+    background: conic-gradient(from 0deg, rgba(74, 124, 89, 0.1), rgba(135, 169, 107, 0.2), rgba(156, 175, 136, 0.1));
+    transform: rotate(0deg) scale(0.8);
+  }
+  33% {
+    background: conic-gradient(from 120deg, rgba(135, 169, 107, 0.2), rgba(156, 175, 136, 0.3), rgba(74, 124, 89, 0.1));
+    transform: rotate(120deg) scale(1.1);
+  }
+  66% {
+    background: conic-gradient(from 240deg, rgba(156, 175, 136, 0.2), rgba(74, 124, 89, 0.3), rgba(135, 169, 107, 0.1));
+    transform: rotate(240deg) scale(0.9);
+  }
+  100% {
+    background: conic-gradient(from 360deg, rgba(74, 124, 89, 0.1), rgba(135, 169, 107, 0.2), rgba(156, 175, 136, 0.1));
+    transform: rotate(360deg) scale(0.8);
+  }
+}
+
+@keyframes sparkleConstellation {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(2) rotate(90deg);
+  }
+  40% {
+    opacity: 0.8;
+    transform: scale(1.5) rotate(180deg);
+  }
+  60% {
+    opacity: 0.9;
+    transform: scale(1.8) rotate(270deg);
+  }
+  80% {
+    opacity: 0.6;
+    transform: scale(1.2) rotate(360deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) rotate(450deg);
+  }
+}
+
+/* Enhanced 3D title effects */
+.cinematic-title {
+  perspective: 2000px;
+  transform-style: preserve-3d;
+}
+
+.cinematic-letter {
+  transform-style: preserve-3d;
+  perspective: 1500px;
+  animation: cinematicReveal 2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.energy-wave {
+  animation: energyWave 1.5s ease-in-out forwards;
+}
+
+.particle-explosion {
+  animation: particleExplosion 2s ease-out forwards;
+}
+
+.glow-pulse {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+.energy-field {
+  animation: energyField 8s linear infinite;
+}
+
+.sparkle-constellation {
+  animation: sparkleConstellation 2.5s ease-out forwards;
+}
+
+/* Advanced gradient backgrounds */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--primary) 0%, var(--secondary) 35%, var(--accent) 70%, transparent 100%);
+}
+
+.bg-gradient-conic {
+  background: conic-gradient(from 0deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+}
+
+/* Enhanced magnetic field effects */
+.magnetic-letter:hover {
+  transform: translateZ(50px) rotateY(15deg) rotateX(10deg) scale(1.2);
+  filter: 
+    brightness(1.4) 
+    saturate(1.6) 
+    drop-shadow(0 20px 40px rgba(74, 124, 89, 0.4))
+    drop-shadow(0 0 30px rgba(74, 124, 89, 0.6));
+  text-shadow: 
+    0 0 20px rgba(74, 124, 89, 0.8),
+    0 0 40px rgba(74, 124, 89, 0.6),
+    0 0 60px rgba(74, 124, 89, 0.4);
+}
+
+/* Enhanced Checkmark Animations */
+@keyframes checkmarkDraw {
+  0% {
+    stroke-dasharray: 0 50;
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dasharray: 50 0;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes checkmarkGlow {
+  0% {
+    filter: drop-shadow(0 0 2px rgba(74, 124, 89, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(74, 124, 89, 0.8)) drop-shadow(0 0 15px rgba(74, 124, 89, 0.4));
+  }
+  100% {
+    filter: drop-shadow(0 0 2px rgba(74, 124, 89, 0.3));
+  }
+}
+
+@keyframes energyRipple {
+  0% {
+    transform: scale(0);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+@keyframes sparkleExplosion {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  30% {
+    transform: scale(1.5) rotate(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes magneticPull {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    transform: translateX(3px) scale(1.02);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes featureHighlight {
+  0% {
+    background: transparent;
+    transform: scaleX(0);
+  }
+  50% {
+    background: linear-gradient(90deg, rgba(74, 124, 89, 0.1), rgba(135, 169, 107, 0.1));
+    transform: scaleX(1);
+  }
+  100% {
+    background: transparent;
+    transform: scaleX(0);
+  }
+}
+
+/* Checkmark Container Styles */
+.checkmark-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.checkmark-container:hover {
+  animation: magneticPull 0.6s ease-in-out;
+}
+
+.checkmark-svg {
+  position: relative;
+  z-index: 10;
+  filter: drop-shadow(0 2px 4px rgba(74, 124, 89, 0.2));
+}
+
+.checkmark-svg:hover {
+  animation: checkmarkGlow 2s ease-in-out infinite;
+}
+
+.checkmark-path {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: checkmarkDraw 1.5s ease-out forwards;
+}
+
+/* Feature List Item Enhancements */
+.feature-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-item:hover {
+  background: rgba(74, 124, 89, 0.03);
+  box-shadow: 0 8px 25px rgba(74, 124, 89, 0.1);
+  transform: translateY(-2px);
+}
+
+.feature-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(74, 124, 89, 0.1), transparent);
+  transition: left 0.8s ease-in-out;
+}
+
+.feature-item:hover::before {
+  left: 100%;
+}
+
+/* Energy Ring Animation */
+.energy-ring {
+  position: absolute;
+  border: 2px solid rgba(74, 124, 89, 0.3);
+  border-radius: 50%;
+  animation: energyRipple 3s ease-out infinite;
+}
+
+/* Sparkle Particle System */
+.sparkle-particle-system {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.sparkle-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, rgba(74, 124, 89, 0.8) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: sparkleExplosion 2s ease-out forwards;
+}
+
+.sparkle-particle:nth-child(1) { animation-delay: 0s; }
+.sparkle-particle:nth-child(2) { animation-delay: 0.2s; }
+.sparkle-particle:nth-child(3) { animation-delay: 0.4s; }
+.sparkle-particle:nth-child(4) { animation-delay: 0.6s; }
+
+/* 3D Checkmark Hover Effect */
+.checkmark-3d {
+  transform-style: preserve-3d;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkmark-3d:hover {
+  transform: rotateY(15deg) rotateX(10deg) scale(1.1);
+  filter: 
+    drop-shadow(0 10px 20px rgba(74, 124, 89, 0.3))
+    drop-shadow(0 0 15px rgba(74, 124, 89, 0.5));
+}
+
+/* Advanced Feature Text Effects */
+.feature-text {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.feature-text::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transition: width 0.6s ease;
+}
+
+.feature-item:hover .feature-text::after {
+  width: 100%;
+}
+
+/* Magnetic Field Visual Effect */
+@keyframes magneticField {
+  0% {
+    background: radial-gradient(ellipse, rgba(74, 124, 89, 0.05) 0%, transparent 60%);
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    background: radial-gradient(ellipse, rgba(74, 124, 89, 0.1) 0%, transparent 70%);
+    transform: scale(1.1) rotate(180deg);
+  }
+  100% {
+    background: radial-gradient(ellipse, rgba(74, 124, 89, 0.05) 0%, transparent 60%);
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+.magnetic-field-effect {
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: magneticField 4s ease-in-out infinite;
+}
+
+.feature-item:hover .magnetic-field-effect {
+  opacity: 1;
+}
+
+/* Enhanced SVG Path Animations */
+.svg-checkmark-path {
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  animation: drawCheckmark 1.2s ease-out forwards;
+}
+
+@keyframes drawCheckmark {
+  0% {
+    stroke-dashoffset: 24;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+/* Feature List Container Improvements */
+.features-container {
+  position: relative;
+  perspective: 1500px;
+}
+
+.features-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(74, 124, 89, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(135, 169, 107, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.features-container:hover::before {
+  opacity: 1;
+}
+
+/* RTL Checkmark Adjustments */
+[dir="rtl"] .checkmark-container {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .checkmark-svg {
+  transform: scaleX(-1);
+}
+
+/* Enhanced Mobile Responsiveness for Checkmarks */
+@media (max-width: 768px) {
+  .checkmark-container {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .checkmark-svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .energy-ring {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Parallax Effect */
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Mobile Parallax Fix */
+@media (max-width: 768px) {
+  .parallax-bg {
+    background-attachment: scroll;
+  }
+}
+
+/* Enhanced Mobile Grid for 4 Features */
+@media (max-width: 640px) {
+  .features-grid-mobile {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1023px) {
+  .features-grid-tablet {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .features-grid-desktop {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+/* Improved CTA Section Background */
+.cta-dynamic-bg {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+  position: relative;
+}
+
+.cta-dynamic-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Mobile Typography Improvements */
+@media (max-width: 640px) {
+  .mobile-text-hero {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+  
+  .mobile-text-large {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+  
+  .mobile-text-base {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+/* Custom Scrollbar Styling */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(74, 124, 89, 0.3) rgba(74, 124, 89, 0.1);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(74, 124, 89, 0.1);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(74, 124, 89, 0.3);
+  border-radius: 3px;
+  transition: background 0.2s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(74, 124, 89, 0.5);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:active {
+  background: rgba(74, 124, 89, 0.7);
+}
+
+/* Language Dropdown Specific Scrollbar */
+.language-dropdown-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(135, 169, 107, 0.4) rgba(135, 169, 107, 0.1);
+  scroll-behavior: smooth;
+}
+
+.language-dropdown-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.language-dropdown-scrollbar::-webkit-scrollbar-track {
+  background: linear-gradient(to bottom, rgba(135, 169, 107, 0.1), rgba(156, 175, 136, 0.1));
+  border-radius: 4px;
+  margin: 4px;
+}
+
+.language-dropdown-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, rgba(135, 169, 107, 0.4), rgba(74, 124, 89, 0.5));
+  border-radius: 4px;
+  border: 1px solid rgba(74, 124, 89, 0.2);
+  transition: all 0.3s ease;
+}
+
+.language-dropdown-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, rgba(135, 169, 107, 0.6), rgba(74, 124, 89, 0.7));
+  box-shadow: 0 0 4px rgba(74, 124, 89, 0.3);
+}
+
+.language-dropdown-scrollbar::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(to bottom, rgba(74, 124, 89, 0.8), rgba(45, 80, 22, 0.8));
+}
+
+/* Language Dropdown No Horizontal Scroll */
+.language-dropdown-container {
+  overflow-x: hidden;
+  overflow-y: auto;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+.language-button-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* RTL Scrollbar Adjustments */
+[dir="rtl"] .language-dropdown-scrollbar::-webkit-scrollbar {
+  left: 0;
+  right: auto;
+}
+
+/* Mobile Language Dropdown Improvements */
+@media (max-width: 640px) {
+  .language-dropdown-scrollbar {
+    max-height: 320px;
+    min-width: 220px;
+  }
+  
+  .language-dropdown-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .language-button-text {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-dropdown-scrollbar {
+    max-height: 280px;
+    min-width: 200px;
+    max-width: calc(100vw - 2rem);
+  }
+  
+  .language-dropdown-container {
+    padding: 0.25rem;
+  }
+  
+  .language-button-text {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .language-dropdown-scrollbar {
+    max-height: 260px;
+    min-width: 180px;
+  }
+  
+  .language-button-text {
+    font-size: 0.75rem;
+  }
+}
+
+/* Improved Touch Scrolling for Mobile */
+.language-dropdown-scrollbar {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  scroll-padding: 8px;
+}
+
+/* Smooth scroll behavior for language selection */
+.language-dropdown-scrollbar .language-dropdown-item {
+  scroll-margin: 8px;
+}
+
+/* Enhanced visibility for scrollbar on hover */
+.language-dropdown-scrollbar:hover::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, rgba(135, 169, 107, 0.7), rgba(74, 124, 89, 0.8));
+  box-shadow: 
+    0 0 6px rgba(74, 124, 89, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Subtle glow effect for active scrollbar */
+.language-dropdown-scrollbar::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(to bottom, rgba(74, 124, 89, 0.9), rgba(45, 80, 22, 0.9));
+  box-shadow: 
+    0 0 8px rgba(74, 124, 89, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown shadow enhancement */
+.language-dropdown-enhanced-shadow {
+  box-shadow: 
+    0 20px 25px -5px rgba(74, 124, 89, 0.1), 
+    0 10px 10px -5px rgba(74, 124, 89, 0.04),
+    0 0 0 1px rgba(74, 124, 89, 0.1);
+}
+
+/* Language button hover state improvements */
+.language-button-hover-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.language-button-hover-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(74, 124, 89, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.language-button-hover-effect:hover::before {
+  left: 100%;
+}
+
+/* Performance Optimizations */
+.rasta-animations-container {
+  contain: layout style paint;
+  will-change: auto;
+}
+
+.rasta-animations-container * {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Layout Stability */
+.logo-header-spacer {
+  height: 80px; /* Reserve space for fixed logo */
+  width: 100%;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .logo-header-spacer {
+    height: 60px;
+  }
+}
+
+/* Floating Elements Container */
+.floating-elements-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  contain: layout style paint;
+  z-index: -1;
+}
+
+/* Animation Performance */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Prevent Layout Shifts */
+.prevent-layout-shift {
+  contain: layout style paint;
+  will-change: auto;
+}
+
+.prevent-layout-shift * {
+  will-change: transform, opacity;
+}
+
+/* Mobile Logo Positioning */
+@media (max-width: 640px) {
+  .rasta-logo-container img {
+    max-height: 48px;
+    width: auto;
+  }
+  
+  .frequency-bars {
+    height: 24px;
+    scale: 0.8;
+  }
+}
+
+@media (max-width: 480px) {
+  .rasta-logo-container img {
+    max-height: 40px;
+  }
+  
+  .frequency-bars {
+    height: 20px;
+    scale: 0.7;
+  }
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  .checkmark-path,
+  .energy-ring,
+  .sparkle-particle,
+  .magnetic-field-effect,
+  .parallax-bg {
+    animation: none !important;
+    background-attachment: scroll;
+  }
+  
+  .feature-item {
+    transition: none;
+  }
+  
+  .language-dropdown-scrollbar {
+    scroll-behavior: auto;
+  }
+}
+
+/* High Performance Mode */
+@media (prefers-reduced-motion: no-preference) {
+  .performance-optimized {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .checkmark-svg {
+    filter: contrast(1.5);
+  }
+  
+  .feature-item:hover {
+    background: rgba(74, 124, 89, 0.1);
+    border: 2px solid var(--primary);
+  }
+}
+
+/* Letter entrance animation variants */
+@keyframes letterBounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) rotateX(-90deg) rotateY(-45deg) translateY(100px);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1) rotateX(-10deg) rotateY(-5deg) translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateX(0deg) rotateY(0deg) translateY(0px);
+  }
+}
+
+@keyframes letterSpinIn {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-720deg) translateY(-100px);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.1) rotate(-360deg) translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg) translateY(0px);
+  }
+}
+
+.letter-bounce-in {
+  animation: letterBounceIn 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.letter-spin-in {
+  animation: letterSpinIn 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* Advanced blur and focus effects */
+.focus-blur-transition {
+  transition: filter 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced perspective for 3D effects */
+.perspective-deep {
+  perspective: 2000px;
+  perspective-origin: center center;
+}
+
+/* Improved overflow handling for animations */
+.title-container {
+  overflow: visible !important;
+  contain: none !important;
+}
+
+/* Enhanced greenish gradients and color utilities */
+.bg-gradient-sage {
+  background: linear-gradient(135deg, var(--sage-forest) 0%, var(--sage-emerald) 25%, var(--sage-bright) 50%, var(--sage-lime) 75%, var(--sage-mint) 100%);
+}
+
+.bg-gradient-sage-soft {
+  background: linear-gradient(135deg, var(--sage-dark) 0%, var(--sage-medium) 25%, var(--sage-light) 50%, var(--sage-pale) 75%, var(--cream) 100%);
+}
+
+.bg-gradient-sage-radial {
+  background: radial-gradient(circle, var(--sage-forest) 0%, var(--sage-emerald) 25%, var(--sage-bright) 50%, var(--sage-lime) 75%, var(--sage-mint) 100%);
+}
+
+.bg-gradient-sage-conic {
+  background: conic-gradient(from 0deg, var(--sage-forest), var(--sage-emerald), var(--sage-bright), var(--sage-lime), var(--sage-mint), var(--sage-forest));
+}
+
+.text-gradient-sage {
+  background: linear-gradient(135deg, var(--sage-forest) 0%, var(--sage-emerald) 25%, var(--sage-bright) 50%, var(--sage-lime) 75%, var(--sage-mint) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-gradient-sage {
+  border-image: linear-gradient(135deg, var(--sage-forest), var(--sage-emerald), var(--sage-bright), var(--sage-lime), var(--sage-mint)) 1;
+}
+
+/* Enhanced greenish shadows */
+.shadow-sage {
+  box-shadow: 0 4px 6px -1px rgba(34, 139, 34, 0.1), 0 2px 4px -1px rgba(34, 139, 34, 0.06);
+}
+
+.shadow-sage-lg {
+  box-shadow: 0 10px 15px -3px rgba(34, 139, 34, 0.1), 0 4px 6px -2px rgba(34, 139, 34, 0.05);
+}
+
+.shadow-sage-xl {
+  box-shadow: 0 20px 25px -5px rgba(34, 139, 34, 0.1), 0 10px 10px -5px rgba(34, 139, 34, 0.04);
+}
+
+.shadow-sage-2xl {
+  box-shadow: 0 25px 50px -12px rgba(34, 139, 34, 0.25);
+}
+
+/* Enhanced greenish glows */
+.glow-sage {
+  box-shadow: 0 0 20px rgba(34, 139, 34, 0.3);
+}
+
+.glow-sage-lg {
+  box-shadow: 0 0 30px rgba(34, 139, 34, 0.4);
+}
+
+.glow-sage-xl {
+  box-shadow: 0 0 40px rgba(34, 139, 34, 0.5);
+}
+
+/* Sage color variants */
+.bg-sage-50 { background-color: #f0f9f0; }
+.bg-sage-100 { background-color: #dcf2dc; }
+.bg-sage-200 { background-color: #b9e6b9; }
+.bg-sage-300 { background-color: #96d996; }
+.bg-sage-400 { background-color: #73cc73; }
+.bg-sage-500 { background-color: #50bf50; }
+.bg-sage-600 { background-color: #3d993d; }
+.bg-sage-700 { background-color: #2a732a; }
+.bg-sage-800 { background-color: #174d17; }
+.bg-sage-900 { background-color: #0a260a; }
+
+.text-sage-50 { color: #f0f9f0; }
+.text-sage-100 { color: #dcf2dc; }
+.text-sage-200 { color: #b9e6b9; }
+.text-sage-300 { color: #96d996; }
+.text-sage-400 { color: #73cc73; }
+.text-sage-500 { color: #50bf50; }
+.text-sage-600 { color: #3d993d; }
+.text-sage-700 { color: #2a732a; }
+.text-sage-800 { color: #174d17; }
+.text-sage-900 { color: #0a260a; }
+
+/* Enhanced greenish animations */
+@keyframes sagePulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(34, 139, 34, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(34, 139, 34, 0.6);
+  }
+}
+
+.animate-sage-pulse {
+  animation: sagePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes sageGlow {
+  0%, 100% {
+    filter: brightness(1) drop-shadow(0 0 5px rgba(34, 139, 34, 0.3));
+  }
+  50% {
+    filter: brightness(1.1) drop-shadow(0 0 20px rgba(34, 139, 34, 0.6));
+  }
+}
+
+.animate-sage-glow {
+  animation: sageGlow 3s ease-in-out infinite;
+}
+
+/* Enhanced greenish hover effects */
+.hover-sage-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-sage-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(34, 139, 34, 0.1), 0 10px 10px -5px rgba(34, 139, 34, 0.04);
+}
+
+.hover-sage-scale {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-sage-scale:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 50px -12px rgba(34, 139, 34, 0.25);
+}
+
+/* Sage-themed button styles */
+.btn-sage-primary {
+  background: linear-gradient(135deg, var(--sage-forest) 0%, var(--sage-emerald) 50%, var(--sage-bright) 100%);
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-sage-primary:hover {
+  background: linear-gradient(135deg, var(--sage-emerald) 0%, var(--sage-bright) 50%, var(--sage-lime) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(34, 139, 34, 0.3);
+}
+
+.btn-sage-secondary {
+  background: transparent;
+  color: var(--sage-forest);
+  border: 2px solid var(--sage-forest);
+  transition: all 0.3s ease;
+}
+
+.btn-sage-secondary:hover {
+  background: var(--sage-forest);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(34, 139, 34, 0.3);
+}
+
+/* Enhanced greenish backgrounds for sections */
+.section-sage-bg {
+  background: linear-gradient(135deg, 
+    rgba(34, 139, 34, 0.05) 0%, 
+    rgba(50, 205, 50, 0.03) 25%, 
+    rgba(144, 238, 144, 0.05) 50%, 
+    rgba(152, 251, 152, 0.03) 75%, 
+    rgba(0, 255, 127, 0.05) 100%
+  );
+}
+
+.section-sage-bg-alt {
+  background: linear-gradient(135deg, 
+    rgba(45, 80, 22, 0.08) 0%, 
+    rgba(74, 124, 89, 0.05) 25%, 
+    rgba(135, 169, 107, 0.08) 50%, 
+    rgba(196, 212, 196, 0.05) 75%, 
+    rgba(248, 250, 247, 0.08) 100%
+  );
+}
+
+/* Sage-themed card styles */
+.card-sage {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 247, 0.95) 100%);
+  border: 1px solid rgba(34, 139, 34, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.card-sage:hover {
+  border-color: rgba(34, 139, 34, 0.3);
+  box-shadow: 0 20px 25px -5px rgba(34, 139, 34, 0.1), 0 10px 10px -5px rgba(34, 139, 34, 0.04);
+  transform: translateY(-4px);
+}
+
+/* Enhanced greenish text effects */
+.text-sage-gradient {
+  background: linear-gradient(135deg, var(--sage-forest) 0%, var(--sage-emerald) 25%, var(--sage-bright) 50%, var(--sage-lime) 75%, var(--sage-mint) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Sage-themed loading animations */
+@keyframes sageSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-sage-spin {
+  animation: sageSpin 1s linear infinite;
+}
+
+/* Enhanced greenish focus states */
+.focus-sage:focus {
+  outline: 2px solid var(--sage-forest);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(34, 139, 34, 0.1);
+}
+
+/* Sage-themed selection */
+::selection {
+  background-color: rgba(34, 139, 34, 0.2);
+  color: var(--sage-forest);
+}
+
+::-moz-selection {
+  background-color: rgba(34, 139, 34, 0.2);
+  color: var(--sage-forest);
+}
+
+/* Enhanced Hebrew Typography and Styling */
+html[lang="he"] .cta-hebrew-title {
+  font-family: "Segoe UI", "Tahoma", "Arial", sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  text-shadow: 
+    0 0 20px rgba(34, 139, 34, 0.3),
+    0 0 40px rgba(34, 139, 34, 0.2),
+    0 0 60px rgba(34, 139, 34, 0.1);
+}
+
+html[lang="he"] .cta-hebrew-subtitle {
+  font-family: "Segoe UI", "Tahoma", "Arial", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  background: linear-gradient(135deg, 
+    #f0f9f0 0%, 
+    #dcf2dc 25%, 
+    #b9e6b9 50%, 
+    #96d996 75%, 
+    #73cc73 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: hebrewGradientShift 4s ease infinite;
+}
+
+@keyframes hebrewGradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+html[lang="he"] .cta-hebrew-description {
+  font-family: "Segoe UI", "Tahoma", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #f0f9f0;
+  text-shadow: 0 2px 4px rgba(34, 139, 34, 0.3);
+}
+
+html[lang="he"] .cta-hebrew-button {
+  font-family: "Segoe UI", "Tahoma", "Arial", sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+html[lang="he"] .cta-hebrew-guarantee {
+  font-family: "Segoe UI", "Tahoma", "Arial", sans-serif;
+  font-weight: 600;
+  line-height: 1.5;
+  background: linear-gradient(135deg, 
+    #f0f9f0 0%, 
+    #dcf2dc 25%, 
+    #b9e6b9 50%, 
+    #96d996 75%, 
+    #73cc73 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+/* Enhanced Hebrew CTA Section Background */
+.cta-hebrew-enhanced {
+  background: linear-gradient(135deg, 
+    rgba(34, 139, 34, 0.9) 0%, 
+    rgba(50, 205, 50, 0.8) 25%, 
+    rgba(144, 238, 144, 0.9) 50%, 
+    rgba(152, 251, 152, 0.8) 75%, 
+    rgba(0, 255, 127, 0.9) 100%
+  );
+  position: relative;
+}
+
+.cta-hebrew-enhanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(240, 249, 240, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(220, 242, 220, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Hebrew-specific floating elements */
+.cta-hebrew-floating {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.cta-hebrew-floating .sage-leaf {
+  position: absolute;
+  color: rgba(240, 249, 240, 0.3);
+  animation: hebrewFloat 20s linear infinite;
+}
+
+@keyframes hebrewFloat {
+  0% {
+    transform: translateY(100vh) rotate(0deg) scale(0.5);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Enhanced Hebrew button hover effects */
+html[lang="he"] .cta-hebrew-button:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 
+    0 20px 25px -5px rgba(34, 139, 34, 0.4),
+    0 10px 10px -5px rgba(34, 139, 34, 0.2),
+    0 0 30px rgba(240, 249, 240, 0.3);
+  text-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(240, 249, 240, 0.6);
+}
+
+/* Hebrew text glow effects */
+html[lang="he"] .cta-hebrew-glow {
+  animation: hebrewGlow 3s ease-in-out infinite;
+}
+
+@keyframes hebrewGlow {
+  0%, 100% {
+    filter: brightness(1) drop-shadow(0 0 5px rgba(240, 249, 240, 0.3));
+  }
+  50% {
+    filter: brightness(1.2) drop-shadow(0 0 20px rgba(240, 249, 240, 0.6));
+  }
+}
+
+/* Enhanced Hebrew spacing and layout */
+html[lang="he"] .cta-section {
+  direction: rtl;
+  text-align: right;
+}
+
+html[lang="he"] .cta-section .cta-title {
+  margin-bottom: 2rem;
+}
+
+html[lang="he"] .cta-section .cta-subtitle {
+  margin-bottom: 1.5rem;
+}
+
+html[lang="he"] .cta-section .cta-description {
+  margin-bottom: 3rem;
+}
+
+/* Hebrew-specific responsive adjustments */
+@media (max-width: 768px) {
+  html[lang="he"] .cta-hebrew-title {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+  
+  html[lang="he"] .cta-hebrew-subtitle {
+    font-size: 2.5rem;
+    line-height: 1.3;
+  }
+  
+  html[lang="he"] .cta-hebrew-description {
+    font-size: 1.25rem;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 480px) {
+  html[lang="he"] .cta-hebrew-title {
+    font-size: 2.5rem;
+    line-height: 1.3;
+  }
+  
+  html[lang="he"] .cta-hebrew-subtitle {
+    font-size: 2rem;
+    line-height: 1.4;
+  }
+  
+  html[lang="he"] .cta-hebrew-description {
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+}
+
+/* Enhanced Footer Animations and Greenish Gradients */
+.footer-animated {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-animated::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(34, 139, 34, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(144, 238, 144, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(152, 251, 152, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  animation: footerGlow 6s ease-in-out infinite;
+}
+
+@keyframes footerGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+/* Footer title animations */
+.footer-title {
+  position: relative;
+  z-index: 10;
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--sage-100), var(--sage-300), var(--sage-100));
+  transform: translateX(-50%);
+  border-radius: 2px;
+  animation: footerTitleUnderline 4s ease-in-out infinite;
+}
+
+@keyframes footerTitleUnderline {
+  0%, 100% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    width: 80%;
+    opacity: 1;
+  }
+}
+
+/* Footer leaf animations */
+.footer-leaf-left,
+.footer-leaf-right {
+  position: relative;
+  z-index: 10;
+}
+
+.footer-leaf-left::before,
+.footer-leaf-right::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  background: radial-gradient(circle, rgba(34, 139, 34, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0;
+  animation: footerLeafGlow 3s ease-in-out infinite;
+}
+
+.footer-leaf-left::before {
+  animation-delay: 0s;
+}
+
+.footer-leaf-right::before {
+  animation-delay: 1.5s;
+}
+
+@keyframes footerLeafGlow {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Enhanced footer background gradients */
+.footer-animated {
+  background: linear-gradient(135deg, 
+    rgba(34, 139, 34, 0.95) 0%, 
+    rgba(50, 205, 50, 0.9) 20%, 
+    rgba(144, 238, 144, 0.95) 40%, 
+    rgba(152, 251, 152, 0.9) 60%, 
+    rgba(0, 255, 127, 0.95) 80%, 
+    rgba(34, 139, 34, 0.95) 100%
+  );
+  background-size: 400% 400%;
+  animation: footerGradientShift 8s ease infinite;
+}
+
+@keyframes footerGradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Footer floating elements */
+.footer-animated .floating-element {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: footerFloat 10s ease-in-out infinite;
+}
+
+@keyframes footerFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 0.6;
+  }
+}
+
+/* Footer text glow effects */
+.footer-animated .text-sage-gradient {
+  animation: footerTextGlow 4s ease-in-out infinite;
+}
+
+@keyframes footerTextGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(34, 139, 34, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(34, 139, 34, 0.6));
+  }
+}
+
+/* Footer hover effects */
+.footer-animated:hover .footer-title::after {
+  animation-duration: 2s;
+}
+
+.footer-animated:hover .footer-leaf-left,
+.footer-animated:hover .footer-leaf-right {
+  animation-duration: 1.5s;
+}
+
+/* Footer responsive animations */
+@media (max-width: 768px) {
+  .footer-animated {
+    background-size: 300% 300%;
+  }
+  
+  .footer-title::after {
+    height: 2px;
+    bottom: -8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-animated {
+    background-size: 250% 250%;
+  }
+  
+  .footer-title::after {
+    height: 1px;
+    bottom: -6px;
+  }
+}
+
+/* Footer performance optimizations */
+.footer-animated * {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/* Footer accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .footer-animated,
+  .footer-title,
+  .footer-leaf-left,
+  .footer-leaf-right {
+    animation: none !important;
+  }
+  
+  .footer-title::after {
+    animation: none !important;
+    width: 80%;
+    opacity: 1;
+  }
+}
+
+/* Russian CTA Text Color Fixes */
+html[lang="ru"] .cta-russian-title {
+  color: #b9e6b9 !important; /* sage-200 */
+  text-shadow: 0 0 20px rgba(185, 230, 185, 0.3);
+}
+
+html[lang="ru"] .cta-russian-subtitle {
+  color: #96d996 !important; /* sage-300 */
+  text-shadow: 0 0 20px rgba(150, 217, 150, 0.3);
+}
+
+html[lang="ru"] .cta-russian-description {
+  color: #dcf2dc !important; /* sage-100 */
+  text-shadow: 0 0 10px rgba(220, 242, 220, 0.3);
+}
+
+/* Force Russian text colors with higher specificity */
+section[id="cta-section"] html[lang="ru"] .cta-russian-title,
+section[id="cta-section"] [lang="ru"] .cta-russian-title {
+  color: #b9e6b9 !important;
+}
+
+section[id="cta-section"] html[lang="ru"] .cta-russian-subtitle,
+section[id="cta-section"] [lang="ru"] .cta-russian-subtitle {
+  color: #96d996 !important;
+}
+
+section[id="cta-section"] html[lang="ru"] .cta-russian-description,
+section[id="cta-section"] [lang="ru"] .cta-russian-description {
+  color: #dcf2dc !important;
+}
+
+/* Additional Russian text styling */
+html[lang="ru"] .cta-section .cta-russian-title {
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+html[lang="ru"] .cta-section .cta-russian-subtitle {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+html[lang="ru"] .cta-section .cta-russian-description {
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Smooth Scrolling and Enhanced Scroll Functionality */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for fixed headers if any */
+}
+
+/* Enhanced scroll animations for all languages */
+.scroll-to-section {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scroll-to-section:hover {
+  transform: translateY(-2px);
+}
+
+/* Language-specific scroll indicators */
+[lang="he"] .scroll-indicator {
+  direction: rtl;
+}
+
+[lang="ar"] .scroll-indicator {
+  direction: rtl;
+}
+
+[lang="ru"] .scroll-indicator {
+  direction: ltr;
+}
+
+/* Enhanced scroll button animations */
+.scroll-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(34, 139, 34, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.scroll-button:hover::before {
+  left: 100%;
+}
+
+/* Scroll progress indicator */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--sage-forest), var(--sage-emerald), var(--sage-bright));
+  z-index: 9999;
+  transition: width 0.1s ease;
+}
+
+/* Enhanced scroll animations for different languages */
+[lang="he"] .scroll-animation,
+[lang="ar"] .scroll-animation {
+  animation: scrollRTL 0.8s ease-out;
+}
+
+[lang="ru"] .scroll-animation,
+[lang="en"] .scroll-animation {
+  animation: scrollLTR 0.8s ease-out;
+}
+
+@keyframes scrollRTL {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scrollLTR {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Scroll to top button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--sage-forest), var(--sage-emerald));
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(34, 139, 34, 0.3);
+}
+
+/* RTL scroll adjustments */
+[dir="rtl"] .scroll-to-top {
+  right: auto;
+  left: 20px;
+}
+
+/* Mobile scroll optimizations */
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 60px;
+  }
+  
+  .scroll-to-top {
+    width: 45px;
+    height: 45px;
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  [dir="rtl"] .scroll-to-top {
+    left: 15px;
+  }
+}
+
+/* Accessibility improvements for scroll */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  .scroll-animation {
+    animation: none;
+  }
+}
+
+/* Enhanced scroll button states */
+.scroll-button:focus {
+  outline: 2px solid var(--sage-forest);
+  outline-offset: 2px;
+}
+
+.scroll-button:active {
+  transform: scale(0.95);
+}
+
+/* Scroll indicator animations */
+.scroll-indicator {
+  animation: scrollIndicatorPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollIndicatorPulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+
+
+
